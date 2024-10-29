@@ -6,6 +6,10 @@ In more technical depth, the search engine uses [kmindex](https://tlemane.github
 
 **This repository is used as a discussion place for questions/issues from `Logan Search` users**.
 
+## Submit an issue
+
+⚠️ If you submit an issue related to a query you already run on `Logan Search`, please provide your `session-id`, *e.g* `kmviz-6e038ec6-a26d-4710-bcda-d2c31cdae4e0` (the first 8 characters are enough if you do not want to share it publicly, *e.g.* `kmviz-6e038ec6`). 
+
 
 
  
