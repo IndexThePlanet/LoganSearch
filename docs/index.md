@@ -2,7 +2,7 @@
 
 ## **Introduction**
 
-Logan is a dataset of DNA and RNA sequences constructed by performing genome assembly over the NCBI Sequence Read
+[Logan](https://github.com/IndexThePlanet/Logan) is a dataset of DNA and RNA sequences constructed by performing genome assembly over the NCBI Sequence Read
 Archive (SRA). The result is two sets of sequences, one corresponding to unitigs (1), and the other one to contigs (2).
 { .annotate }
 
@@ -14,26 +14,30 @@ any k-mer in the unitigs is also present somewhere in the original SRA reads.
 Graph. Compared to unitigs, the only theoritical guarantee is that every k-mer in the contigs exists in the
 original reads.
 
-All assembled sequences from Logan are provided free of charge and are available for unrestricted download using [`awscli`](https://aws.amazon.com/cli/).
+All assembled sequences from Logan are provided free of charge and are available for unrestricted download, e.g. using `wget`.
 
 ??? info "Download commands"
     Download a sample given its accession (*eg.* `SRR17555654`)
 
     **For unitigs**
     ```bash
-    aws s3 cp s3://logan-pub/u/[accession]/[accession].unitigs.fa.zst . --no-sign-request
+    wget https://s3.amazonaws.com/logan-pub/u/[accession]/[accession].unitigs.fa.zst
+	# for example: 
+	wget https://s3.amazonaws.com/logan-pub/u/SRR17555654/SRR17555654.unitigs.fa.zst
     ```
 
     **For contigs**
     ```bash
-    aws s3 cp s3://logan-pub/c/[accession]/[accession].contigs.fa.zst . --no-sign-request
+    wget https://s3.amazonaws.com/logan-pub/c/[accession]/[accession].contigs.fa.zst
+	# for example:
+	wget https://s3.amazonaws.com/logan-pub/c/SRR17555654/SRR17555654.contigs.fa.zst
     ```
 	
 
 ### *Which samples should you download?*
 
 This is where Logan Search comes in. Logan Search allows you to query a DNA or RNA sequence across all Logan samples (xxx plus all the reference genomes from GenBank and RefSeq). By submitting a sequence,
-you can, in a few minutes, find which samples contain it and explore the results directly in your browser.
+you can, in a few minutes, find which samples contain that sequence and explore the results directly in your browser.
 
 ### *How it works?*
 
@@ -72,14 +76,14 @@ The Logan Search index is composed of a large number of sub-indexes. You can cho
 
 Available options (all include reference genomes from GenBank and RefSeq):
 
-- `All`: all Logan unitigs - xxx million samples
+- `All`: all Logan unitigs, SRA up until 2023 - 23 million total samples
 - `All_No_viral_human`: excludes viral and human samples - xxx % of the total samples
-- `Fast`: optimized subset for faster queries, also excluding viral samples - xxx % of the total samples (see below)
+- `Fast`: optimized subset for faster queries, also excluding viral samples - 99.5 % of the total samples (see below)
 - `Fast_No_human`: same as Fast, but excluding human samples - xxx % of the total samples
 - `GenBank_RefSeq`: only GenBank and RefSeq reference genomes - xxx % of the total samples
 
 ??? info "About `Fast` groups"
-    The full index is composed of 2,869 sub-indexes. These sub-indexes group samples based on their superkingdom, sequencing type, and number of unique k-mers. Some combinations are rare and result in very small sub-indexes. These are excluded from `Fast`. Since querying each sub-index has a fixed computational cost regardless of its size or results, excluding these small sub-indexes significantly reduces query time while still covering the vast majority of Logan. In practice, the `Fast` option queries approximately 99.5% of all samples.
+    The full index is composed of 2,869 sub-indexes. These sub-indexes grouping was based on superkingdom, sequencing type, and number of unique k-mers. Some combinations are rare and result in very small sub-indexes. These are excluded from `Fast`. Since querying each sub-index has a fixed computational cost regardless of its size or results, excluding these small sub-indexes significantly reduces query time while still covering the vast majority of Logan. In practice, the `Fast` option queries approximately 99.5% of all samples.
 
 #### 3. Threshold (optional)
 
