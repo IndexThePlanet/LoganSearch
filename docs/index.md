@@ -14,9 +14,11 @@ any k-mer in the unitigs is also present somewhere in the original SRA reads.
 Graph. Compared to unitigs, the only theoritical guarantee is that every k-mer in the contigs exists in the
 original reads.
 
-All assembled sequences from Logan are provided free of charge and are available for unrestricted download using [`awscli`]().
+All assembled sequences from Logan are provided free of charge and are available for unrestricted download using [`awscli`](https://aws.amazon.com/cli/).
 
 ??? info "Download commands"
+    Download a sample given its accession (*eg.* `SRR17555654`)
+
     **For unitigs**
     ```bash
     aws s3 cp s3://logan-pub/u/[accession]/[accession].unitigs.fa.zst . --no-sign-request
@@ -26,16 +28,21 @@ All assembled sequences from Logan are provided free of charge and are available
     ```bash
     aws s3 cp s3://logan-pub/c/[accession]/[accession].contigs.fa.zst . --no-sign-request
     ```
+	
 
 ### *Which samples should you download?*
 
-This is where Logan Search comes in. Logan Search allows you to query a DNA or RNA sequence across all Logan samples. By submitting a sequence,
+This is where Logan Search comes in. Logan Search allows you to query a DNA or RNA sequence across all Logan samples (xxx plus all the reference genomes from GenBank and RefSeq). By submitting a sequence,
 you can, in a few minutes, find which samples contain it and explore the results directly in your browser.
 
 ### *How it works?*
 
-Logan Search relies on kmindex, a k-mer based search engine. Think of it like BLAST, but instead of aligning to genomes, it compares your query sequence
+Logan Search relies on kmindex, a k-mer (1) based search engine. Think of it like BLAST, but instead of aligning to genomes, it compares your query sequence
 against Logan’s unitigs. For each sample, it computes the percentage of shared k-mers between your query sequence and the indexed unitigs.
+{ .annotate }
+
+1. A k-mer is a word of length *k*. In practice we used *k=31*.
+
 
 ## **Submitting a query**
 
@@ -65,18 +72,18 @@ The Logan Search index is composed of a large number of sub-indexes. You can cho
 
 Available options (all include reference genomes from GenBank and RefSeq):
 
-- `All`: all Logan unitigs
-- `All_No_viral_human`: excludes viral and human samples
-- `Fast`: optimized subset for faster queries, also excluding viral samples (see below)
-- `Fast_No_human`: same as Fast, but excluding human samples
-- `GenBank_RefSeq`: only GenBank and RefSeq reference genomes
+- `All`: all Logan unitigs - xxx million samples
+- `All_No_viral_human`: excludes viral and human samples - xxx % of the total samples
+- `Fast`: optimized subset for faster queries, also excluding viral samples - xxx % of the total samples (see below)
+- `Fast_No_human`: same as Fast, but excluding human samples - xxx % of the total samples
+- `GenBank_RefSeq`: only GenBank and RefSeq reference genomes - xxx % of the total samples
 
 ??? info "About `Fast` groups"
     The full index is composed of 2,869 sub-indexes. These sub-indexes group samples based on their superkingdom, sequencing type, and number of unique k-mers. Some combinations are rare and result in very small sub-indexes. These are excluded from `Fast`. Since querying each sub-index has a fixed computational cost regardless of its size or results, excluding these small sub-indexes significantly reduces query time while still covering the vast majority of Logan. In practice, the `Fast` option queries approximately 99.5% of all samples.
 
 #### 3. Threshold (optional)
 
-The minimum proportion of shared k-mers required to consider a match, ranging from 0.25 to 1. Increasing this threshold makes the search more stringent (fewer but more confident matches), while lowering it increases sensitivity.
+The minimum proportion of k-mers from the query required to consider a match, ranging from 0.25 to 1. Increasing this threshold makes the search more stringent (fewer but more confident matches), while lowering it increases sensitivity. XXXThis parameter has no impact on the query time. 
 
 
 #### 4. Email (optional)
@@ -199,7 +206,7 @@ In the plot below, a parallel categories diagram displays the relationships betw
 
 ### *3. Blast-like Search*
 
-Logan-Search enables querying at the scale of SRA samples by searching for Logan unitigs.To go further and identify the specific unitig(s) or contig(s) containing the query sequence, a BLAST-like search can be performed on demand at the level of an individual sample.
+Logan-Search enables querying at the scale of SRA samples by searching for Logan unitigs. To go further and identify the specific unitig(s) or contig(s) containing the query sequence, a BLAST-like search can be performed on demand at the level of an individual sample.
 
 As shown below, the `BLAST-Like Alignement` tab allows you to select a sample and perform a search on its contigs or unitigs. This process is executed on demand and typically takes a few tens of seconds. For particularly large sets of unitigs or contigs, you may encounter timeouts. To avoid this, it is possible to perform the search locally on your own machine using the results—see the Logan Blaster tutorial for instructions.
 
@@ -216,7 +223,7 @@ The results consist of three views. At the top, a list of unitigs or contigs tha
     <figcaption>Blast-like alignement results</figcaption>
 </figure>
 
-If you need to perform alignments against multiple samples, this can be done locally on your machine. We provide a dedicated tool for this purpose: [LoganBlaster](https://github.com/pierrepeterlongo/logan_blaster).
+If you need to perform alignments against multiple samples, this can be done locally on your machine. We provide a dedicated tool for this purpose: [LoganBlaster](https://github.com/pierrepeterlongo/logan_blaster). xxxIf users' email is provided, the sent email also provides the logan-blaster command associated to the performed search.
 
 
 
