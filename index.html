@@ -1,0 +1,1034 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Logan-Search Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+  
+  
+  
+  
+  <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M17%2013h-4v4h-2v-4H7v-2h4V7h2v4h4m-5-9A10%2010%200%200%200%202%2012a10%2010%200%200%200%2010%2010%2010%2010%200%200%200%2010-10A10%2010%200%200%200%2012%202%22/%3E%3C/svg%3E');}</style>
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/extra.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#logan-search" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="Logan-Search Documentation" class="md-header__button md-logo" aria-label="Logan-Search Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Logan-Search Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Logan-Search
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Logan-Search Documentation" class="md-nav__button md-logo" aria-label="Logan-Search Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Logan-Search Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Logan-Search
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Logan-Search
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#which-samples-should-you-download" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Which samples should you download?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How it works?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#submitting-a-query" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Submitting a query
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Submitting a query">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#required-inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required inputs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Required inputs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-sequence-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Sequence (required)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-groups-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Groups (required)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-threshold-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Threshold (optional)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-email-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Email (optional)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        History
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploring-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exploring results
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exploring results">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Table
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Table">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-filtering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Filtering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-sorting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Sorting
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-map-and-plot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Map and Plot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-blast-like-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Blast-like Search
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Blast-like Search">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#logan-blaster" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logan Blaster
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#which-samples-should-you-download" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Which samples should you download?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How it works?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#submitting-a-query" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Submitting a query
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Submitting a query">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#required-inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required inputs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Required inputs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-sequence-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Sequence (required)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-groups-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Groups (required)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-threshold-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Threshold (optional)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-email-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Email (optional)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        History
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploring-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exploring results
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exploring results">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Table
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Table">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-filtering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Filtering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-sorting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Sorting
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-map-and-plot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Map and Plot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-blast-like-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Blast-like Search
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Blast-like Search">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#logan-blaster" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logan Blaster
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="logan-search">Logan-Search</h1>
+<h2 id="introduction"><strong>Introduction</strong></h2>
+<p class="annotate"><a href="https://github.com/IndexThePlanet/Logan">Logan</a> is a dataset of DNA and RNA sequences constructed by performing genome assembly over the NCBI Sequence Read
+Archive (SRA). The result is two sets of sequences, one corresponding to unitigs (1), and the other one to contigs (2).</p>
+<ol>
+<li>
+<p>In a De Bruijn Graph, unitigs are all the sequences corresponding to non-branching paths. In that
+case, every k-mer that occurs more than twice in the original SRA sample will appear in the unitigs. Conversely,
+any k-mer in the unitigs is also present somewhere in the original SRA reads.</p>
+</li>
+<li>
+<p>Contigs are obtained by compacting unitigs, i.e. by making a choice at ambiguous bifurcations in the De Bruijn
+Graph. Compared to unitigs, the only theoritical guarantee is that every k-mer in the contigs exists in the
+original reads.</p>
+</li>
+</ol>
+<p>All assembled sequences from Logan are provided free of charge and are available for unrestricted download, e.g. using <code>wget</code>.</p>
+<details class="info">
+<summary>Download commands</summary>
+<p>Download a sample given its accession (<em>eg.</em> <code>SRR17555654</code>)</p>
+<p><strong>For unitigs</strong>
+<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>https://s3.amazonaws.com/logan-pub/u/<span class="o">[</span>accession<span class="o">]</span>/<span class="o">[</span>accession<span class="o">]</span>.unitigs.fa.zst
+<span class="c1"># for example:</span>
+wget<span class="w"> </span>https://s3.amazonaws.com/logan-pub/u/SRR17555654/SRR17555654.unitigs.fa.zst
+</code></pre></div></p>
+<p><strong>For contigs</strong>
+<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>https://s3.amazonaws.com/logan-pub/c/<span class="o">[</span>accession<span class="o">]</span>/<span class="o">[</span>accession<span class="o">]</span>.contigs.fa.zst
+<span class="c1"># for example:</span>
+wget<span class="w"> </span>https://s3.amazonaws.com/logan-pub/c/SRR17555654/SRR17555654.contigs.fa.zst
+</code></pre></div></p>
+</details>
+<h3 id="which-samples-should-you-download"><em>Which samples should you download?</em></h3>
+<p>This is where Logan Search comes in. Logan Search allows you to query a DNA or RNA sequence across all Logan samples (plus all the reference genomes from GenBank and RefSeq). By submitting a sequence,
+you can, in a few minutes, find which samples contain that sequence and explore the results directly in your browser.</p>
+<h3 id="how-it-works"><em>How it works?</em></h3>
+<p class="annotate">Logan Search relies on kmindex, a k-mer (1) based search engine. Think of it like BLAST, but instead of aligning to genomes, it compares your query sequence
+against Logan’s unitigs. For each sample, it computes the percentage of shared k-mers between your query sequence and the indexed unitigs.</p>
+<ol>
+<li>A k-mer is a word of length <em>k</em>. In practice we used <em>k=31</em>.</li>
+</ol>
+<h2 id="submitting-a-query"><strong>Submitting a query</strong></h2>
+<p>You can submit a query using the dedicated button on the homepage, or directly via the following link: <a href="https://logan-search.org/dashboard">logan-search.org/dashboard</a>.</p>
+<figure>
+    <img align="center" alt="Image title" src="assets/home.png" />
+    <figcaption>Logan-Search homepage</figcaption>
+</figure>
+<figure>
+    <img align="center" alt="Image title" src="assets/submit.png" />
+    <figcaption>Logan-Search submission form</figcaption>
+</figure>
+<h3 id="required-inputs"><em>Required inputs</em></h3>
+<h4 id="1-sequence-required">1. Sequence (required)</h4>
+<p>The query sequence must be provided in FASTA format, either by uploading a file or by pasting it into the text area. Each submission is limited to a single sequence with a maximum length of 2.5 kb.</p>
+<h4 id="2-groups-required">2. Groups (required)</h4>
+<p>The Logan Search index is composed of a large number of sub-indexes. You can choose to run your query across all of them or only a subset.</p>
+<p>Available options (all include reference genomes from GenBank and RefSeq):</p>
+<ul>
+<li><code>All</code>: all Logan unitigs, SRA up until 2023 - 23.4 million total samples</li>
+<li><code>All_No_viral_human</code>: excludes viral and human samples - 65.49 % of the total samples</li>
+<li><code>Fast</code>: optimized subset for faster queries, also excluding viral samples - 77.59% of the total samples, 99.5 % of the non viral samples (see below)</li>
+<li><code>Fast_No_human</code>: same as Fast, but excluding human samples - 64.99 % of the total samples</li>
+<li><code>GenBank_RefSeq</code>: only GenBank and RefSeq reference genomes - ~45k samples</li>
+</ul>
+<details class="info">
+<summary>About <code>Fast</code> groups</summary>
+<p>The full index is composed of 2,869 sub-indexes. These sub-indexes grouping was based on superkingdom (with exceptions for human and mouse), sequencing type, and number of unique k-mers. Some combinations are rare and result in very small sub-indexes. These are excluded from <code>Fast</code>. Since querying each sub-index add a fixed computational cost regardless of its size or results, excluding these small sub-indexes significantly reduces query time while still covering the vast majority of Logan. In practice, the <code>Fast</code> option queries approximately 99.5% of non viral samples.</p>
+</details>
+<h4 id="3-threshold-optional">3. Threshold (optional)</h4>
+<p>The minimum proportion of k-mers from the query required to consider a match, ranging from 0.25 to 1. Increasing this threshold makes the search more stringent (fewer but more confident matches), while lowering it increases sensitivity. This parameter has no impact on the query time.</p>
+<h4 id="4-email-optional">4. Email (optional)</h4>
+<p>If you would like to be notified when your query is complete, you can provide your email address. Once the query finishes, you will receive two links: one to visualize the results and another to download them.</p>
+<h3 id="history"><em>History</em></h3>
+<p>Each query is assigned an ID, such as <code>kmviz-08a28c6c-9691-4eca-a8aa-ef62f098f62c</code>. You can save this ID to revisit your results later at <code>https://logan-search.org/dashboard/&lt;ID&gt;</code>. Your query history is also accessible from the <a href="https://logan-search.org">Logan Search homepage</a>. <strong>All results are retained for one month.</strong></p>
+<h2 id="exploring-results"><strong>Exploring results</strong></h2>
+<p>The results page consists of four views: <code>Table</code>, <code>Map</code>, <code>Plot</code>, and <code>Blast-like alignment</code>.</p>
+<h3 id="1-table"><em>1. Table</em></h3>
+<p>The metadata table displays all results returned by your query, with one entry per match. Each row therefore corresponds to a single SRA sample. The metadata shown in the table originate from two sources. First, raw metadata are retrieved directly from the <a href="https://www.ncbi.nlm.nih.gov/sra/docs/sra-athena/">Sequence Read Archive metadata</a>. Second, these metadata are parsed and processed to infer additional information, such as tissues or diseases associated with the experiment. When possible, this information is further linked to standard ontologies, such as the <a href="https://www.brenda-enzymes.org">BRENDA Tissue Ontology</a> (BTO) or the <a href="https://disease-ontology.org/">Disease Ontology</a> (DO). All inferred fields are highlited in blue in the table.</p>
+<figure>
+    <img align="center" alt="Image title" src="assets/table.png" />
+    <figcaption>Logan-Search metadata table</figcaption>
+</figure>
+<details class="info">
+<summary>Metadata description</summary>
+<ul>
+<li><code>acc</code>: Accession ID (SRA metadata)</li>
+<li><code>kmer_coverage</code>: Ratio of shared k-mer between the query and the sample</li>
+<li><code>ANI_estimation</code>: ANI estimation based on Mash Screen estimator: <code>E = (|Qk| &amp; |Sk| / |Qk|)^(1/k)</code>, with <code>Qk</code> and <code>Sk</code> the query and sample k-mer sets</li>
+<li><code>bioproject</code>: Bioproject ID (SRA metadata)</li>
+<li><code>biosample</code>: Biosample ID (SRA metadata)</li>
+<li><code>bioproject_title</code>: Bioproject title (SRA metadata)</li>
+<li><code>bioproject_description</code>: Bioproject description (SRA metadata)</li>
+<li><code>refs</code>: References associated to accessions (From ENA xref)</li>
+<li><code>sample_acc</code>: Sample accession (SRA metadata)</li>
+<li><code>assay_type</code>: Sequencing type (SRA metadata)</li>
+<li><code>center_name</code>: Sequence center name (SRA metadata)</li>
+<li><code>experiment</code>: Experiment ID (SRA metadata)</li>
+<li><code>sample_name</code>: Sample name (SRA metadata)</li>
+<li><code>organism</code>: Organism (SRA metadata)</li>
+<li><code>disease_source</code>: The field from SRA metadata used to infer 'do_label' and 'do_id' (SRA metadata parsing + AI)</li>
+<li><code>disease_text</code>: The text from 'disease_source' used to infer 'do_label' and 'do_id' (SRA metadata parsing + AI)</li>
+<li><code>do_label</code>: The Disease ontology label, inferred from 'disease' (SRA metadata parsing + AI)</li>
+<li><code>do_id</code>: The Disease ontology ID, inferred from 'disease' (SRA metadata parsing + AI)</li>
+<li><code>tissue</code>: The sequenced tissue inferred from 'tissue_source' and 'tissue_text' (SRA metadata parsing + AI)</li>
+<li><code>tissue_source</code>: The field from SRA metadata used to infer 'tissue' (SRA metadata parsing + AI)</li>
+<li><code>tissue_text</code>: The text from 'tissue_source' field used to infer 'tissue' (SRA metadata parsing + AI)</li>
+<li><code>bto_id</code>: The BRENDA tissue ontology ID (SRA metadata parsing + AI)</li>
+<li><code>contigs_n50</code>: Contigs n50 (Logan assembly metadata)</li>
+<li><code>contigs_nbseq</code>: Number of contigs (Logan assembly metadata)</li>
+<li><code>contigs_maxlen</code>: Max contigs length (Logan assembly metadata)</li>
+<li><code>contigs_sumlen</code>: Sum of contig lengths (Logan assembly metadata)</li>
+<li><code>unitigs_n50</code>: Unitigs n50 (Logan assembly metadata)</li>
+<li><code>unitigs_nbseq</code>: Number of unitigs (Logan assembly metadata)</li>
+<li><code>unitigs_maxlen</code>: Max unitigs length (Logan assembly metadata)</li>
+<li><code>unitigs_sumlen</code>: Sum of unitig lengths (Logan assembly metadata)</li>
+<li><code>instrument</code>: Sequencing instrument (SRA metadata)</li>
+<li><code>librarylayout</code>: Library layout (SRA metadata)</li>
+<li><code>libraryselection</code>: Library selection (SRA metadata)</li>
+<li><code>librarysource</code>: Library source (SRA metadata)</li>
+<li><code>library_name</code>: Library name (SRA metadata)</li>
+<li><code>platform</code>: Sequencing Platform (SRA metadata)</li>
+<li><code>sra_study</code>: Study ID (SRA metadata)</li>
+<li><code>releasedate</code>: Release date (SRA metadata)</li>
+<li><code>mbytes</code>: Size of sequencing reads in megabytes (SRA metadata)</li>
+<li><code>avgspotlen</code>: (SRA metadata)</li>
+<li><code>mbases</code>: Size of sequencing reads in megabases (SRA metadata)</li>
+<li><code>biosamplemodel_sam</code>: (SRA metadata)</li>
+<li><code>collection_date_sa</code>: (SRA metadata)</li>
+</ul>
+</details>
+<p>To provide a quick overview of the query context, metadata associated with the top hits are supplied to a large language model (LLM) to generate a short summary.</p>
+<figure>
+    <img align="center" alt="Image title" src="assets/AI2.png" />
+</figure>
+<details class="info">
+<summary>Metadata fields used for the summary generation</summary>
+<p>The following fields are used: <code>kmer_coverage</code>, <code>bioproject_title</code>, <code>bioproject_description</code>, <code>releasedate</code>, <code>assay_type</code>, <code>latitude</code>, <code>longitude</code>, <code>organism</code>, <code>tissue</code>, <code>instrument</code>, <code>librarysource</code>, <code>platform</code>, <code>center_name</code>, <code>disease_text</code></p>
+</details>
+<p>The metadata table serves as the central data source for all visualizations in the interface. This means that any operation applied to the table, such as filtering or sorting, will automatically update all figures. The reverse is also true: selections made on the visualizations (e.g. lasso or box selections) are reflected as filters in the table. As a result, users can easily focus on specific subset of results, such as samples from a particular geographic location, simply by selecting the corresponding region the map.</p>
+<details class="info">
+<summary>Sorting and filtering</summary>
+<h4 id="1-filtering">1. Filtering</h4>
+<p>Filters can be applied to the table in two ways. First, users can define SQL-like <code>WHERE</code> queries, which can be executed from the bar located above the table.</p>
+<p><figure markdown="span">
+    <img align="center" alt="Image title" src="assets/SQL.png" />
+</figure></p>
+<p>Alternatively, filters can be applied directly within the table using the menu available next to each column header (<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 22h2v2h-2m-4-2h2v2h-2m-4-2h2v2H7m8-4.12c.04.3-.06.62-.29.83a.996.996 0 0 1-1.41 0L9.29 16.7a.99.99 0 0 1-.29-.83v-5.12L4.21 4.62a1 1 0 0 1 .17-1.4c.19-.14.4-.22.62-.22h14c.22 0 .43.08.62.22a1 1 0 0 1 .17 1.4L15 10.75zM7.04 5 11 10.06v5.52l2 2v-7.53L16.96 5Z"/></svg></span>).</p>
+<p><figure markdown="span">
+    <img align="center" alt="Image title" src="assets/filters.png" />
+</figure></p>
+<h4 id="2-sorting">2. Sorting</h4>
+<p>Sorting is done by clicking on the column headers of the table, switching between ascending or descending order.</p>
+</details>
+<h3 id="2-map-and-plot"><em>2. <code>Map</code> and <code>Plot</code></em></h3>
+<p>The <code>Map</code> and <code>Plot</code> tabs provide visual ways to explore the data presented in the metadata table. These interactive views allow you to quickly identify patterns, such as geographic distribution or relationships between variables, and to select subsets of data directly from the visualizations. Essentially, these two tabs are graphical wrappers built on top of the Plotly plotting library. The available plot options correspond to those provided by <a href="https://plotly.com/python-api-reference/">Plotly Express</a>. Below are a few examples.</p>
+<hr />
+<p>In the map below, the size of each point corresponds to the number of samples at that location (<code>location_count</code>), while the color represents the average k-mer coverage (<code>location_avg_coverage</code>).</p>
+<figure>
+    <img alt="" src="assets/map.png" />
+</figure>
+<hr />
+<p>In the plot below, a parallel categories diagram displays the relationships between <code>organism</code>, <code>tissue</code>, and <code>assay_type</code>, while the color represents the <code>kmer_coverage</code>.</p>
+<figure>
+    <img alt="" src="assets/plot.png" />
+</figure>
+<h3 id="3-blast-like-search"><em>3. Blast-like Search</em></h3>
+<p>Logan-Search enables querying at the scale of SRA samples by searching for Logan unitigs. To go further and identify the specific unitig(s) or contig(s) containing the query sequence, a BLAST-like search can be performed on demand at the level of an individual sample.</p>
+<p>As shown below, the <code>BLAST-Like Alignement</code> tab allows you to select a sample and perform a search on its contigs or unitigs. This process is executed on demand and typically takes a few tens of seconds. For particularly large sets of unitigs or contigs, you may encounter timeouts. To avoid this, it is possible to perform the search locally on your own machine using the results, see <code>Logan Blaster</code> instructions below.</p>
+<figure>
+    <img alt="" src="assets/blastsubmit.png" />
+    <figcaption>On-demand Blast-like alignement submission</figcaption>
+</figure>
+<p>The results consist of three views. At the top, a list of unitigs or contigs that matched the query is displayed, along with their sequences and abundances (for more information on abundance, see <a href="https://github.com/IndexThePlanet/Logan/blob/main/Unitigs.md#theoretical-guarantees">here</a>. At the bottom, alignment results are shown in two panels: a table on the left and detailed alignments on the right.</p>
+<figure>
+    <img alt="" src="assets/blast.png" />
+    <figcaption>Blast-like alignement results</figcaption>
+</figure>
+<h4 id="logan-blaster">Logan Blaster</h4>
+<p>If you need to perform alignments against multiple samples, this can be done locally on your machine. We provide a dedicated tool for this purpose: <a href="https://github.com/pierrepeterlongo/logan_blaster">LoganBlaster</a>. If users' email is provided, the sent email also provides the logan-blaster command associated to the performed search.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": [], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>
