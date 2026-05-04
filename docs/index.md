@@ -22,7 +22,7 @@ All assembled sequences from Logan are provided free of charge and are available
     **For unitigs**
     ```bash
     wget https://s3.amazonaws.com/logan-pub/u/[accession]/[accession].unitigs.fa.zst
-	# for example: 
+	# for example:
 	wget https://s3.amazonaws.com/logan-pub/u/SRR17555654/SRR17555654.unitigs.fa.zst
     ```
 
@@ -32,11 +32,11 @@ All assembled sequences from Logan are provided free of charge and are available
 	# for example:
 	wget https://s3.amazonaws.com/logan-pub/c/SRR17555654/SRR17555654.contigs.fa.zst
     ```
-	
+
 
 ### *Which samples should you download?*
 
-This is where Logan Search comes in. Logan Search allows you to query a DNA or RNA sequence across all Logan samples (xxx plus all the reference genomes from GenBank and RefSeq). By submitting a sequence,
+This is where Logan Search comes in. Logan Search allows you to query a DNA or RNA sequence across all Logan samples (plus all the reference genomes from GenBank and RefSeq). By submitting a sequence,
 you can, in a few minutes, find which samples contain that sequence and explore the results directly in your browser.
 
 ### *How it works?*
@@ -69,30 +69,32 @@ You can submit a query using the dedicated button on the homepage, or directly v
 
 The query sequence must be provided in FASTA format, either by uploading a file or by pasting it into the text area. Each submission is limited to a single sequence with a maximum length of 2.5 kb.
 
-
 #### 2. Groups (required)
 
 The Logan Search index is composed of a large number of sub-indexes. You can choose to run your query across all of them or only a subset.
 
 Available options (all include reference genomes from GenBank and RefSeq):
 
-- `All`: all Logan unitigs, SRA up until 2023 - 23 million total samples
-- `All_No_viral_human`: excludes viral and human samples - xxx % of the total samples
-- `Fast`: optimized subset for faster queries, also excluding viral samples - 99.5 % of the total samples (see below)
-- `Fast_No_human`: same as Fast, but excluding human samples - xxx % of the total samples
-- `GenBank_RefSeq`: only GenBank and RefSeq reference genomes - xxx % of the total samples
+- `All`: all Logan unitigs, SRA up until 2023 - 23.4 million total samples
+- `All_No_viral_human`: excludes viral and human samples - 65.49 % of the total samples
+- `Fast`: optimized subset for faster queries, also excluding viral samples - 77.59% of the total samples, 99.5 % of the non viral samples (see below)
+- `Fast_No_human`: same as Fast, but excluding human samples - 64.99 % of the total samples
+- `GenBank_RefSeq`: only GenBank and RefSeq reference genomes - ~45k samples
 
 ??? info "About `Fast` groups"
-    The full index is composed of 2,869 sub-indexes. These sub-indexes grouping was based on superkingdom, sequencing type, and number of unique k-mers. Some combinations are rare and result in very small sub-indexes. These are excluded from `Fast`. Since querying each sub-index has a fixed computational cost regardless of its size or results, excluding these small sub-indexes significantly reduces query time while still covering the vast majority of Logan. In practice, the `Fast` option queries approximately 99.5% of all samples.
+    The full index is composed of 2,869 sub-indexes. These sub-indexes grouping was based on superkingdom (with exceptions for human and mouse), sequencing type, and number of unique k-mers. Some combinations are rare and result in very small sub-indexes. These are excluded from `Fast`. Since querying each sub-index add a fixed computational cost regardless of its size or results, excluding these small sub-indexes significantly reduces query time while still covering the vast majority of Logan. In practice, the `Fast` option queries approximately 99.5% of non viral samples.
 
 #### 3. Threshold (optional)
 
-The minimum proportion of k-mers from the query required to consider a match, ranging from 0.25 to 1. Increasing this threshold makes the search more stringent (fewer but more confident matches), while lowering it increases sensitivity. XXXThis parameter has no impact on the query time. 
-
+The minimum proportion of k-mers from the query required to consider a match, ranging from 0.25 to 1. Increasing this threshold makes the search more stringent (fewer but more confident matches), while lowering it increases sensitivity. This parameter has no impact on the query time.
 
 #### 4. Email (optional)
 
 If you would like to be notified when your query is complete, you can provide your email address. Once the query finishes, you will receive two links: one to visualize the results and another to download them.
+
+### *History*
+
+Each query is assigned an ID, such as `kmviz-08a28c6c-9691-4eca-a8aa-ef62f098f62c`. You can save this ID to revisit your results later at `https://logan-search.org/dashboard/<ID>`. Your query history is also accessible from the [Logan Search homepage](https://logan-search.org). **All results are retained for one month.**
 
 
 ## **Exploring results**
@@ -212,7 +214,7 @@ In the plot below, a parallel categories diagram displays the relationships betw
 
 Logan-Search enables querying at the scale of SRA samples by searching for Logan unitigs. To go further and identify the specific unitig(s) or contig(s) containing the query sequence, a BLAST-like search can be performed on demand at the level of an individual sample.
 
-As shown below, the `BLAST-Like Alignement` tab allows you to select a sample and perform a search on its contigs or unitigs. This process is executed on demand and typically takes a few tens of seconds. For particularly large sets of unitigs or contigs, you may encounter timeouts. To avoid this, it is possible to perform the search locally on your own machine using the results—see the Logan Blaster tutorial for instructions.
+As shown below, the `BLAST-Like Alignement` tab allows you to select a sample and perform a search on its contigs or unitigs. This process is executed on demand and typically takes a few tens of seconds. For particularly large sets of unitigs or contigs, you may encounter timeouts. To avoid this, it is possible to perform the search locally on your own machine using the results, see `Logan Blaster` instructions below.
 
 <figure markdown="span">
     ![](./assets/blastsubmit.png)
@@ -227,7 +229,9 @@ The results consist of three views. At the top, a list of unitigs or contigs tha
     <figcaption>Blast-like alignement results</figcaption>
 </figure>
 
-If you need to perform alignments against multiple samples, this can be done locally on your machine. We provide a dedicated tool for this purpose: [LoganBlaster](https://github.com/pierrepeterlongo/logan_blaster). xxxIf users' email is provided, the sent email also provides the logan-blaster command associated to the performed search.
+#### Logan Blaster
+
+If you need to perform alignments against multiple samples, this can be done locally on your machine. We provide a dedicated tool for this purpose: [LoganBlaster](https://github.com/pierrepeterlongo/logan_blaster). If users' email is provided, the sent email also provides the logan-blaster command associated to the performed search.
 
 
 
