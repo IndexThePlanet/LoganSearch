@@ -802,8 +802,8 @@
 
 
 
-<h1 id="logan-search">Logan-Search</h1>
-<h2 id="introduction"><strong>Introduction</strong></h2>
+<h1 id="logan-search">Logan-Search<a class="headerlink" href="#logan-search" title="Permanent link">🔗</a></h1>
+<h2 id="introduction"><strong>Introduction</strong><a class="headerlink" href="#introduction" title="Permanent link">🔗</a></h2>
 <p class="annotate"><a href="https://github.com/IndexThePlanet/Logan">Logan</a> is a dataset of DNA and RNA sequences constructed by performing genome assembly over the NCBI Sequence Read
 Archive (SRA). The result is two sets of sequences, one corresponding to unitigs (1), and the other one to contigs (2).</p>
 <ol>
@@ -833,16 +833,16 @@ wget<span class="w"> </span>https://s3.amazonaws.com/logan-pub/u/SRR17555654/SRR
 wget<span class="w"> </span>https://s3.amazonaws.com/logan-pub/c/SRR17555654/SRR17555654.contigs.fa.zst
 </code></pre></div></p>
 </details>
-<h3 id="which-samples-should-you-download"><em>Which samples should you download?</em></h3>
+<h3 id="which-samples-should-you-download"><em>Which samples should you download?</em><a class="headerlink" href="#which-samples-should-you-download" title="Permanent link">🔗</a></h3>
 <p>This is where Logan Search comes in. Logan Search allows you to query a DNA or RNA sequence across all Logan samples (plus all the reference genomes from GenBank and RefSeq). By submitting a sequence,
 you can, in a few minutes, find which samples contain that sequence and explore the results directly in your browser.</p>
-<h3 id="how-it-works"><em>How it works?</em></h3>
+<h3 id="how-it-works"><em>How it works?</em><a class="headerlink" href="#how-it-works" title="Permanent link">🔗</a></h3>
 <p class="annotate">Logan Search relies on kmindex, a k-mer (1) based search engine. Think of it like BLAST, but instead of aligning to genomes, it compares your query sequence
 against Logan’s unitigs. For each sample, it computes the percentage of shared k-mers between your query sequence and the indexed unitigs.</p>
 <ol>
 <li>A k-mer is a word of length <em>k</em>. In practice we used <em>k=31</em>.</li>
 </ol>
-<h2 id="submitting-a-query"><strong>Submitting a query</strong></h2>
+<h2 id="submitting-a-query"><strong>Submitting a query</strong><a class="headerlink" href="#submitting-a-query" title="Permanent link">🔗</a></h2>
 <p>You can submit a query using the dedicated button on the homepage, or directly via the following link: <a href="https://logan-search.org/dashboard">logan-search.org/dashboard</a>.</p>
 <figure>
     <img align="center" alt="Image title" src="assets/home.png" />
@@ -852,10 +852,10 @@ against Logan’s unitigs. For each sample, it computes the percentage of shared
     <img align="center" alt="Image title" src="assets/submit.png" />
     <figcaption>Logan-Search submission form</figcaption>
 </figure>
-<h3 id="required-inputs"><em>Required inputs</em></h3>
-<h4 id="1-sequence-required">1. Sequence (required)</h4>
+<h3 id="required-inputs"><em>Required inputs</em><a class="headerlink" href="#required-inputs" title="Permanent link">🔗</a></h3>
+<h4 id="1-sequence-required">1. Sequence (required)<a class="headerlink" href="#1-sequence-required" title="Permanent link">🔗</a></h4>
 <p>The query sequence must be provided in FASTA format, either by uploading a file or by pasting it into the text area. Each submission is limited to a single sequence with a maximum length of 2.5 kb.</p>
-<h4 id="2-groups-required">2. Groups (required)</h4>
+<h4 id="2-groups-required">2. Groups (required)<a class="headerlink" href="#2-groups-required" title="Permanent link">🔗</a></h4>
 <p>The Logan Search index is composed of a large number of sub-indexes. You can choose to run your query across all of them or only a subset.</p>
 <p>Available options (all include reference genomes from GenBank and RefSeq):</p>
 <ul>
@@ -869,15 +869,15 @@ against Logan’s unitigs. For each sample, it computes the percentage of shared
 <summary>About <code>Fast</code> groups</summary>
 <p>The full index is composed of 2,869 sub-indexes. These sub-indexes grouping was based on superkingdom (with exceptions for human and mouse), sequencing type, and number of unique k-mers. Some combinations are rare and result in very small sub-indexes. These are excluded from <code>Fast</code>. Since querying each sub-index add a fixed computational cost regardless of its size or results, excluding these small sub-indexes significantly reduces query time while still covering the vast majority of Logan. In practice, the <code>Fast</code> option queries approximately 99.5% of non viral samples.</p>
 </details>
-<h4 id="3-threshold-optional">3. Threshold (optional)</h4>
+<h4 id="3-threshold-optional">3. Threshold (optional)<a class="headerlink" href="#3-threshold-optional" title="Permanent link">🔗</a></h4>
 <p>The minimum proportion of k-mers from the query required to consider a match, ranging from 0.25 to 1. Increasing this threshold makes the search more stringent (fewer but more confident matches), while lowering it increases sensitivity. This parameter has no impact on the query time.</p>
-<h4 id="4-email-optional">4. Email (optional)</h4>
+<h4 id="4-email-optional">4. Email (optional)<a class="headerlink" href="#4-email-optional" title="Permanent link">🔗</a></h4>
 <p>If you would like to be notified when your query is complete, you can provide your email address. Once the query finishes, you will receive two links: one to visualize the results and another to download them.</p>
-<h3 id="history"><em>History</em></h3>
+<h3 id="history"><em>History</em><a class="headerlink" href="#history" title="Permanent link">🔗</a></h3>
 <p>Each query is assigned an ID, such as <code>kmviz-08a28c6c-9691-4eca-a8aa-ef62f098f62c</code>. You can save this ID to revisit your results later at <code>https://logan-search.org/dashboard/&lt;ID&gt;</code>. Your query history is also accessible from the <a href="https://logan-search.org">Logan Search homepage</a>. <strong>All results are retained for one month.</strong></p>
-<h2 id="exploring-results"><strong>Exploring results</strong></h2>
+<h2 id="exploring-results"><strong>Exploring results</strong><a class="headerlink" href="#exploring-results" title="Permanent link">🔗</a></h2>
 <p>The results page consists of four views: <code>Table</code>, <code>Map</code>, <code>Plot</code>, and <code>Blast-like alignment</code>.</p>
-<h3 id="1-table"><em>1. Table</em></h3>
+<h3 id="1-table"><em>1. Table</em><a class="headerlink" href="#1-table" title="Permanent link">🔗</a></h3>
 <p>The metadata table displays all results returned by your query, with one entry per match. Each row therefore corresponds to a single SRA sample. The metadata shown in the table originate from two sources. First, raw metadata are retrieved directly from the <a href="https://www.ncbi.nlm.nih.gov/sra/docs/sra-athena/">Sequence Read Archive metadata</a>. Second, these metadata are parsed and processed to infer additional information, such as tissues or diseases associated with the experiment. When possible, this information is further linked to standard ontologies, such as the <a href="https://www.brenda-enzymes.org">BRENDA Tissue Ontology</a> (BTO) or the <a href="https://disease-ontology.org/">Disease Ontology</a> (DO). All inferred fields are highlited in blue in the table.</p>
 <figure>
     <img align="center" alt="Image title" src="assets/table.png" />
@@ -942,7 +942,7 @@ against Logan’s unitigs. For each sample, it computes the percentage of shared
 <p>The metadata table serves as the central data source for all visualizations in the interface. This means that any operation applied to the table, such as filtering or sorting, will automatically update all figures. The reverse is also true: selections made on the visualizations (e.g. lasso or box selections) are reflected as filters in the table. As a result, users can easily focus on specific subset of results, such as samples from a particular geographic location, simply by selecting the corresponding region the map.</p>
 <details class="info">
 <summary>Sorting and filtering</summary>
-<h4 id="1-filtering">1. Filtering</h4>
+<h4 id="1-filtering">1. Filtering<a class="headerlink" href="#1-filtering" title="Permanent link">🔗</a></h4>
 <p>Filters can be applied to the table in two ways. First, users can define SQL-like <code>WHERE</code> queries, which can be executed from the bar located above the table.</p>
 <p><figure markdown="span">
     <img align="center" alt="Image title" src="assets/SQL.png" />
@@ -951,10 +951,10 @@ against Logan’s unitigs. For each sample, it computes the percentage of shared
 <p><figure markdown="span">
     <img align="center" alt="Image title" src="assets/filters.png" />
 </figure></p>
-<h4 id="2-sorting">2. Sorting</h4>
+<h4 id="2-sorting">2. Sorting<a class="headerlink" href="#2-sorting" title="Permanent link">🔗</a></h4>
 <p>Sorting is done by clicking on the column headers of the table, switching between ascending or descending order.</p>
 </details>
-<h3 id="2-map-and-plot"><em>2. <code>Map</code> and <code>Plot</code></em></h3>
+<h3 id="2-map-and-plot"><em>2. <code>Map</code> and <code>Plot</code></em><a class="headerlink" href="#2-map-and-plot" title="Permanent link">🔗</a></h3>
 <p>The <code>Map</code> and <code>Plot</code> tabs provide visual ways to explore the data presented in the metadata table. These interactive views allow you to quickly identify patterns, such as geographic distribution or relationships between variables, and to select subsets of data directly from the visualizations. Essentially, these two tabs are graphical wrappers built on top of the Plotly plotting library. The available plot options correspond to those provided by <a href="https://plotly.com/python-api-reference/">Plotly Express</a>. Below are a few examples.</p>
 <hr />
 <p>In the map below, the size of each point corresponds to the number of samples at that location (<code>location_count</code>), while the color represents the average k-mer coverage (<code>location_avg_coverage</code>).</p>
@@ -966,7 +966,7 @@ against Logan’s unitigs. For each sample, it computes the percentage of shared
 <figure>
     <img alt="" src="assets/plot.png" />
 </figure>
-<h3 id="3-blast-like-search"><em>3. Blast-like Search</em></h3>
+<h3 id="3-blast-like-search"><em>3. Blast-like Search</em><a class="headerlink" href="#3-blast-like-search" title="Permanent link">🔗</a></h3>
 <p>Logan-Search enables querying at the scale of SRA samples by searching for Logan unitigs. To go further and identify the specific unitig(s) or contig(s) containing the query sequence, a BLAST-like search can be performed on demand at the level of an individual sample.</p>
 <p>As shown below, the <code>BLAST-Like Alignement</code> tab allows you to select a sample and perform a search on its contigs or unitigs. This process is executed on demand and typically takes a few tens of seconds. For particularly large sets of unitigs or contigs, you may encounter timeouts. To avoid this, it is possible to perform the search locally on your own machine using the results, see <code>Logan Blaster</code> instructions below.</p>
 <figure>
@@ -978,7 +978,7 @@ against Logan’s unitigs. For each sample, it computes the percentage of shared
     <img alt="" src="assets/blast.png" />
     <figcaption>Blast-like alignement results</figcaption>
 </figure>
-<h4 id="logan-blaster">Logan Blaster</h4>
+<h4 id="logan-blaster">Logan Blaster<a class="headerlink" href="#logan-blaster" title="Permanent link">🔗</a></h4>
 <p>If you need to perform alignments against multiple samples, this can be done locally on your machine. We provide a dedicated tool for this purpose: <a href="https://github.com/pierrepeterlongo/logan_blaster">LoganBlaster</a>. If users' email is provided, the sent email also provides the logan-blaster command associated to the performed search.</p>
 
 
