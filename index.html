@@ -55,6 +55,8 @@
     
       <link rel="stylesheet" href="stylesheets/extra.css">
     
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -872,6 +874,55 @@ against Logan’s unitigs. For each sample, it computes the percentage of shared
 <li>A k-mer is a word of length <em>k</em>. In practice we used <em>k=31</em>.</li>
 </ol>
 <h2 id="submitting-a-query"><strong>Submitting a query</strong><a class="headerlink" href="#submitting-a-query" title="Permanent link">🔗</a></h2>
+<p><strong>If you use this service, please cite</strong>: <em>Chikhi R, Lemane T, Loll-Krippleber R, Montoliu-Nerin M, Raffestin B, Camargo AP, Miller CJ, Fiamenghi MB, Agustinho DP, Majidian S, Autric G, Hugues M, Lee J, Faure R, Curry KD, Moura de Sousa JA, Rocha EPC, Koslicki D, Medvedev P, Gupta P, Shen J, Morales-Tapia A, Sihuta K, Roy PJ, Brown GW, Edgar RC, Korobeynikov A, Steinegger M, Lareau CA, Peterlongo P, Babaian A.</em> <strong>Logan: Planetary-Scale Genome Assembly Surveys Life’s Diversity</strong>. bioRxiv. 2025. doi:10.1101/2024.07.30.605881.
+<span class="copy-links">
+  (<a href="#" onclick="copyText('bibtex'); return false;">BibTeX</a>
+  <span>|</span>
+  <a href="#" onclick="copyText('raw'); return false;">Text</a>)
+</span></p>
+<div>
+<textarea id="bibtex" class="hidden">
+@article {Chikhi2024.07.30.605881,
+    author = {Chikhi, Rayan and Lemane, T{\'e}o and Loll-Krippleber, Rapha{\"e}l and Montoliu-Nerin, Merc{\`e} and Raffestin, Brice and Camargo, Antonio Pedro and Miller, Carson J. and Fiamenghi, Mateus Bernabe and Agustinho, Daniel Paiva and Majidian, Sina and Autric, Greg and Hugues, Maxime and Lee, Junkyoung and Faure, Roland and Curry, Kristen D. and Moura de Sousa, Jorge A. and Rocha, Eduardo P. C. and Koslicki, David and Medvedev, Paul and Gupta, Purav and Shen, Jessica and Morales-Tapia, Alejandro and Sihuta, Kate and Roy, Peter J. and Brown, Grant W. and Edgar, Robert C. and Korobeynikov, Anton and Steinegger, Martin and Lareau, Caleb A. and Peterlongo, Pierre and Babaian, Artem},
+    title = {Logan: Planetary-Scale Genome Assembly Surveys Life{\textquoteright}s Diversity},
+    elocation-id = {2024.07.30.605881},
+    year = {2025},
+    doi = {10.1101/2024.07.30.605881},
+    publisher = {Cold Spring Harbor Laboratory},
+    abstract = {The breadth of life{\textquoteright}s diversity is unfathomable, but public nucleic acid sequencing data offers a window into the dispersion and evolution of genetic diversity across Earth. However the rapid growth and accumulation of sequence data have outpaced efficient analysis capabilities. The largest collection of freely available sequencing data is the Sequence Read Archive (SRA), comprising 27.3 million datasets or 5 {\texttimes} 1016 basepairs. To realize the potential of the SRA, we constructed Logan, a massive sequence assembly transforming short reads into long contigs and compressing the data over 100-fold, enabling highly efficient petabase-scale analysis. We created Logan-Search, a k-mer index of Logan for free planetary-scale sequence search, returning matches in minutes. We used Logan contigs to identify \&gt;200 million plastic-degrading enzyme homologs, and validate novel enzymes with catalytic activities exceeding current reference standards. Further, we vastly expand the known diversity of proteins (30-fold over UniRef50), plasmids (22-fold over PLSDB), P4 satellites (4.5-fold), and the recently described Obelisk RNA elements (3.7-fold). Logan also enables ecological and biomedical data mining, such as global tracking of antimicrobial resistance genes and the characterization of viral reactivation across millions of human BioSamples. By transforming the SRA, Logan democratizes access to the world{\textquoteright}s public genetic data and opens frontiers in biotechnology, molecular ecology, and global health.Competing Interest StatementThe authors have declared no competing interest.European Commission, https://ror.org/00k4n6c32, 101088572},
+    URL = {https://www.biorxiv.org/content/early/2025/09/01/2024.07.30.605881},
+    eprint = {https://www.biorxiv.org/content/early/2025/09/01/2024.07.30.605881.full.pdf},
+    journal = {bioRxiv}
+}
+</textarea>
+
+<textarea id="raw" class="hidden">
+Chikhi, R., Lemane, T., Loll-Krippleber, R., Montoliu-Nerin, M., Raffestin, B., Camargo, A., Miller, C., Fiamenghi, M., Agustinho, D., Majidian, S., Autric, G., Hugues, M., Lee, J., Faure, R., Curry, K., Sousa, J., Rocha, E., Koslicki, D., Medvedev, P., Gupta, P., Shen, J., Morales-Tapia, A., Sihuta, K., Roy, P., Brown, G., Edgar, R., Korobeynikov, A., Steinegger, M., Lareau, C., Peterlongo, P., & Babaian, A. (2025). Logan: Planetary-Scale Genome Assembly Surveys Life’s Diversity. bioRxiv.
+</textarea>
+
+</div>
+
+<div id="toast">Copied ✓</div>
+
+<script>
+function copyText(id) {
+  const text = document.getElementById(id).value;
+
+  navigator.clipboard.writeText(text).then(() => {
+    showToast();
+  });
+}
+
+function showToast() {
+  const toast = document.getElementById("toast");
+  toast.classList.add("show");
+
+  setTimeout(() => {
+    toast.classList.remove("show");
+  }, 1200);
+}
+</script>
+
 <p>You can submit a query using the dedicated button on the homepage, or directly via the following link: <a href="https://logan-search.org/dashboard">logan-search.org/dashboard</a>.</p>
 <figure>
     <img align="center" alt="Image title" src="assets/home.png" />
@@ -907,11 +958,28 @@ against Logan’s unitigs. For each sample, it computes the percentage of shared
 <h2 id="exploring-results"><strong>Exploring results</strong><a class="headerlink" href="#exploring-results" title="Permanent link">🔗</a></h2>
 <p>The results page consists of four views: <code>Table</code>, <code>Map</code>, <code>Plot</code>, and <code>Blast-like alignment</code>.</p>
 <h3 id="1-table"><em>1. Table</em><a class="headerlink" href="#1-table" title="Permanent link">🔗</a></h3>
-<p>The metadata table displays all results returned by your query, with one entry per match. Each row therefore corresponds to a single SRA sample. The metadata shown in the table originate from two sources. First, raw metadata are retrieved directly from the <a href="https://www.ncbi.nlm.nih.gov/sra/docs/sra-athena/">Sequence Read Archive metadata</a>. Second, these metadata are parsed and processed to infer additional information, such as tissues or diseases associated with the experiment. When possible, this information is further linked to standard ontologies, such as the <a href="https://www.brenda-enzymes.org">BRENDA Tissue Ontology</a> (BTO) or the <a href="https://disease-ontology.org/">Disease Ontology</a> (DO). All inferred fields are highlited in blue in the table.</p>
+<p>The metadata table displays all results returned by your query, with one entry per match. Each row therefore corresponds to a single SRA sample. The metadata shown in the table originate from two sources. First, raw metadata are retrieved directly from the <a href="https://www.ncbi.nlm.nih.gov/sra/docs/sra-athena/">Sequence Read Archive metadata</a>. Second, these metadata are parsed and processed to infer additional information, such as tissues or diseases associated with the experiment. When possible, this information is further linked to standard ontologies, such as the <a href="https://www.brenda-enzymes.org">BRENDA Tissue Ontology</a> (BTO) or the <a href="https://disease-ontology.org/">Disease Ontology</a> (DO). All inferred fields are highlighted in blue in the table.</p>
 <figure>
-    <img align="center" alt="Image title" src="assets/table.png" />
+    <img align="center" alt="Image title" src="assets/table2.png" />
     <figcaption>Logan-Search metadata table</figcaption>
 </figure>
+<details class="info">
+<summary>About ANI, p-value and e-value</summary>
+<p>The ANI estimate uses the <em>Mash Screen</em> which is defined as:
+$$
+\text{ANI} = \left( \frac{\text{n. of hitting kmers in query}}{\text{n. of kmers in query}}\right) ^{1/k}
+$$</p>
+<hr />
+<p>The p-value indicates the probability that a match happened by chance. Let <span class="arithmatex">\(n_s\)</span> be the number of distinct k-mers in an accession, and suppose that querying a k-mer has a false positive rate <span class="arithmatex">\(f\)</span>.</p>
+<p>The probability that a k-mer drawn uniformly at random from a universe  <span class="arithmatex">\(\mathcal{K}\)</span> is found is</p>
+<div class="arithmatex">\[
+p = \frac{n_s}{|\mathcal{K}|} + \left(1 - \frac{n_s}{|\mathcal{K}|}\right) \cdot f
+\]</div>
+<p>In our case, <span class="arithmatex">\(|\mathcal{K}| = 4^k\)</span>. Now consider a query made of <span class="arithmatex">\(n_q\)</span> distinct \kmers, each drawn independently and hitting with probability <span class="arithmatex">\(p\)</span>.
+Since <span class="arithmatex">\(|\mathcal{K}|\)</span> is very large, the number of hits can be approximated as a Poisson distribution with parameter <span class="arithmatex">\(\lambda = n_q \cdot p\)</span>.
+Then the reported p-value is the probability that a Poisson distribution with parameter <span class="arithmatex">\(n_q\cdot p\)</span> is higher than the observed number of hits.</p>
+<p>The e-value is the p-value times the total number of accessions, which represents the expected number of matches with equal or greater similarity that would be observed by chance.</p>
+</details>
 <details class="info">
 <summary>Metadata description</summary>
 <ul>
@@ -1057,6 +1125,12 @@ against Logan’s unitigs. For each sample, it computes the percentage of shared
     
     
       <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
       
     
   </body>
