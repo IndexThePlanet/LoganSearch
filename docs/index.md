@@ -33,7 +33,6 @@ All assembled sequences from Logan are provided free of charge and are available
 	wget https://s3.amazonaws.com/logan-pub/c/SRR17555654/SRR17555654.contigs.fa.zst
     ```
 
-
 ### *Which samples should you download?*
 
 This is where Logan Search comes in. Logan Search allows you to query a DNA or RNA sequence across all Logan samples (plus all the reference genomes from GenBank and RefSeq). By submitting a sequence,
@@ -50,8 +49,58 @@ against Logan’s unitigs. For each sample, it computes the percentage of shared
 
 ## **Submitting a query**
 
-You can submit a query using the dedicated button on the homepage, or directly via the following link: [logan-search.org/dashboard](https://logan-search.org/dashboard).
 
+**If you use this service, please cite**: *Chikhi R, Lemane T, Loll-Krippleber R, Montoliu-Nerin M, Raffestin B, Camargo AP, Miller CJ, Fiamenghi MB, Agustinho DP, Majidian S, Autric G, Hugues M, Lee J, Faure R, Curry KD, Moura de Sousa JA, Rocha EPC, Koslicki D, Medvedev P, Gupta P, Shen J, Morales-Tapia A, Sihuta K, Roy PJ, Brown GW, Edgar RC, Korobeynikov A, Steinegger M, Lareau CA, Peterlongo P, Babaian A.* **Logan: Planetary-Scale Genome Assembly Surveys Life’s Diversity**. bioRxiv. 2025. doi:10.1101/2024.07.30.605881.
+<span class="copy-links">
+  (<a href="#" onclick="copyText('bibtex'); return false;">BibTeX</a>
+  <span>|</span>
+  <a href="#" onclick="copyText('raw'); return false;">Text</a>)
+</span>
+
+<div>
+<textarea id="bibtex" class="hidden">
+@article {Chikhi2024.07.30.605881,
+	author = {Chikhi, Rayan and Lemane, T{\'e}o and Loll-Krippleber, Rapha{\"e}l and Montoliu-Nerin, Merc{\`e} and Raffestin, Brice and Camargo, Antonio Pedro and Miller, Carson J. and Fiamenghi, Mateus Bernabe and Agustinho, Daniel Paiva and Majidian, Sina and Autric, Greg and Hugues, Maxime and Lee, Junkyoung and Faure, Roland and Curry, Kristen D. and Moura de Sousa, Jorge A. and Rocha, Eduardo P. C. and Koslicki, David and Medvedev, Paul and Gupta, Purav and Shen, Jessica and Morales-Tapia, Alejandro and Sihuta, Kate and Roy, Peter J. and Brown, Grant W. and Edgar, Robert C. and Korobeynikov, Anton and Steinegger, Martin and Lareau, Caleb A. and Peterlongo, Pierre and Babaian, Artem},
+	title = {Logan: Planetary-Scale Genome Assembly Surveys Life{\textquoteright}s Diversity},
+	elocation-id = {2024.07.30.605881},
+	year = {2025},
+	doi = {10.1101/2024.07.30.605881},
+	publisher = {Cold Spring Harbor Laboratory},
+	abstract = {The breadth of life{\textquoteright}s diversity is unfathomable, but public nucleic acid sequencing data offers a window into the dispersion and evolution of genetic diversity across Earth. However the rapid growth and accumulation of sequence data have outpaced efficient analysis capabilities. The largest collection of freely available sequencing data is the Sequence Read Archive (SRA), comprising 27.3 million datasets or 5 {\texttimes} 1016 basepairs. To realize the potential of the SRA, we constructed Logan, a massive sequence assembly transforming short reads into long contigs and compressing the data over 100-fold, enabling highly efficient petabase-scale analysis. We created Logan-Search, a k-mer index of Logan for free planetary-scale sequence search, returning matches in minutes. We used Logan contigs to identify \&gt;200 million plastic-degrading enzyme homologs, and validate novel enzymes with catalytic activities exceeding current reference standards. Further, we vastly expand the known diversity of proteins (30-fold over UniRef50), plasmids (22-fold over PLSDB), P4 satellites (4.5-fold), and the recently described Obelisk RNA elements (3.7-fold). Logan also enables ecological and biomedical data mining, such as global tracking of antimicrobial resistance genes and the characterization of viral reactivation across millions of human BioSamples. By transforming the SRA, Logan democratizes access to the world{\textquoteright}s public genetic data and opens frontiers in biotechnology, molecular ecology, and global health.Competing Interest StatementThe authors have declared no competing interest.European Commission, https://ror.org/00k4n6c32, 101088572},
+	URL = {https://www.biorxiv.org/content/early/2025/09/01/2024.07.30.605881},
+	eprint = {https://www.biorxiv.org/content/early/2025/09/01/2024.07.30.605881.full.pdf},
+	journal = {bioRxiv}
+}
+</textarea>
+
+<textarea id="raw" class="hidden">
+Chikhi, R., Lemane, T., Loll-Krippleber, R., Montoliu-Nerin, M., Raffestin, B., Camargo, A., Miller, C., Fiamenghi, M., Agustinho, D., Majidian, S., Autric, G., Hugues, M., Lee, J., Faure, R., Curry, K., Sousa, J., Rocha, E., Koslicki, D., Medvedev, P., Gupta, P., Shen, J., Morales-Tapia, A., Sihuta, K., Roy, P., Brown, G., Edgar, R., Korobeynikov, A., Steinegger, M., Lareau, C., Peterlongo, P., & Babaian, A. (2025). Logan: Planetary-Scale Genome Assembly Surveys Life’s Diversity. bioRxiv.
+</textarea>
+
+</div>
+
+<div id="toast">Copied ✓</div>
+
+<script>
+function copyText(id) {
+  const text = document.getElementById(id).value;
+
+  navigator.clipboard.writeText(text).then(() => {
+    showToast();
+  });
+}
+
+function showToast() {
+  const toast = document.getElementById("toast");
+  toast.classList.add("show");
+
+  setTimeout(() => {
+    toast.classList.remove("show");
+  }, 1200);
+}
+</script>
+
+You can submit a query using the dedicated button on the homepage, or directly via the following link: [logan-search.org/dashboard](https://logan-search.org/dashboard).
 
 <figure markdown="span">
     ![Image title](./assets/home.png){ align=center }
@@ -103,12 +152,37 @@ The results page consists of four views: `Table`, `Map`, `Plot`, and `Blast-like
 
 ### *1. Table*
 
-The metadata table displays all results returned by your query, with one entry per match. Each row therefore corresponds to a single SRA sample. The metadata shown in the table originate from two sources. First, raw metadata are retrieved directly from the [Sequence Read Archive metadata](https://www.ncbi.nlm.nih.gov/sra/docs/sra-athena/). Second, these metadata are parsed and processed to infer additional information, such as tissues or diseases associated with the experiment. When possible, this information is further linked to standard ontologies, such as the [BRENDA Tissue Ontology](https://www.brenda-enzymes.org) (BTO) or the [Disease Ontology](https://disease-ontology.org/) (DO). All inferred fields are highlited in blue in the table.
+The metadata table displays all results returned by your query, with one entry per match. Each row therefore corresponds to a single SRA sample. The metadata shown in the table originate from two sources. First, raw metadata are retrieved directly from the [Sequence Read Archive metadata](https://www.ncbi.nlm.nih.gov/sra/docs/sra-athena/). Second, these metadata are parsed and processed to infer additional information, such as tissues or diseases associated with the experiment. When possible, this information is further linked to standard ontologies, such as the [BRENDA Tissue Ontology](https://www.brenda-enzymes.org) (BTO) or the [Disease Ontology](https://disease-ontology.org/) (DO). All inferred fields are highlighted in blue in the table.
+
 
 <figure markdown="span">
-    ![Image title](./assets/table.png){ align=center }
+    ![Image title](./assets/table2.png){ align=center }
     <figcaption>Logan-Search metadata table</figcaption>
 </figure>
+
+??? info "About ANI, p-value and e-value"
+    The ANI estimate uses the *Mash Screen* which is defined as:
+    $$
+    \text{ANI} = \left( \frac{\text{n. of hitting kmers in query}}{\text{n. of kmers in query}}\right) ^{1/k}
+    $$
+
+    ---
+
+    The p-value indicates the probability that a match happened by chance. Let $n_s$ be the number of distinct k-mers in an accession, and suppose that querying a k-mer has a false positive rate $f$.
+
+    The probability that a k-mer drawn uniformly at random from a universe  $\mathcal{K}$ is found is
+
+    $$
+    p = \frac{n_s}{|\mathcal{K}|} + \left(1 - \frac{n_s}{|\mathcal{K}|}\right) \cdot f
+    $$
+
+    In our case, $|\mathcal{K}| = 4^k$. Now consider a query made of $n_q$ distinct \kmers, each drawn independently and hitting with probability $p$.
+    Since $|\mathcal{K}|$ is very large, the number of hits can be approximated as a Poisson distribution with parameter $\lambda = n_q \cdot p$.
+    Then the reported p-value is the probability that a Poisson distribution with parameter $n_q\cdot p$ is higher than the observed number of hits.
+
+    The e-value is the p-value times the total number of accessions, which represents the expected number of matches with equal or greater similarity that would be observed by chance.
+
+
 
 ??? info "Metadata description"
     - `acc`: Accession ID (SRA metadata)
@@ -160,6 +234,7 @@ To provide a quick overview of the query context, metadata associated with the t
 <figure markdown="span">
     ![Image title](./assets/AI2.png){ align=center }
 </figure>
+
 
 
 ??? info "Metadata fields used for the summary generation"

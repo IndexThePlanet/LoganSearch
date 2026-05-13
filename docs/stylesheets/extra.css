@@ -1,3 +1,50 @@
 .md-grid {
   max-width: 90vw;
 }
+
+.copy-links a {
+  color: #7c4dff;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.copy-links a:hover {
+  text-decoration: underline;
+}
+
+.copy-links .sep {
+  margin: 0 6px;
+  color: #999;
+}
+
+/* toast */
+#toast {
+  visibility: hidden;
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #323232;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.25s, bottom 0.25s;
+  z-index: 9999;
+}
+
+#toast.show {
+  visibility: visible;
+  opacity: 1;
+  bottom: 45px;
+}
+
+.hidden {
+  position: absolute;
+  left: -9999px;
+}
+
+
+
